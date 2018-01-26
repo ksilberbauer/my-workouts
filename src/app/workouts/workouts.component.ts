@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Workout, WorkoutType } from '../workout';
+import { WORKOUTS } from '../mock-workouts';
 
 @Component({
   selector: 'app-workouts',
@@ -8,11 +9,7 @@ import { Workout, WorkoutType } from '../workout';
 })
 export class WorkoutsComponent implements OnInit {
 
-  workout: Workout = {
-    type: WorkoutType.Upper,
-    date: new Date(2018, 1, 25),
-    exercises: [],
-  };
+  workout: Workout = WORKOUTS[0];
 
   constructor() { }
 

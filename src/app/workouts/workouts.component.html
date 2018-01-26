@@ -8,4 +8,14 @@
             name="workout.date">
     </label>
 </div>
-<div><label>Exercise Count: </label>{{ workout.exercises.length }}</div>
+<div>
+    <h2>Exercises</h2>
+    <ul>
+        <li *ngFor="let exercise of workout.exercises">
+            <div>
+                <b>{{ exercise.name }}</b>
+                <span>{{ exercise.sets }}x{{ exercise.reps }} @ {{ exercise.weight }}lb</span>
+            </div>
+        </li>
+    </ul>
+</div>
