@@ -9,11 +9,17 @@ import { WORKOUTS } from '../mock-workouts';
 })
 export class WorkoutsComponent implements OnInit {
 
-  workout: Workout = WORKOUTS[0];
+  selectedWorkout: Workout;
+
+  workouts: Workout[] = WORKOUTS;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSelect(workout: Workout): void {
+    this.selectedWorkout = workout;
   }
 
 }
