@@ -1,0 +1,11 @@
+<h2>{{ workout.type }}</h2>
+<div>
+    <label>Date:
+        <input
+            [ngModel]="workout.date | date:'yyy-MM-dd'"
+            (ngModelChange)="workout.date = $event"
+            type="date"
+            name="workout.date">
+    </label>
+</div>
+<div><label>Exercise Count: </label>{{ workout.exercises.length }}</div>
