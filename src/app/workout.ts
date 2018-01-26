@@ -1,9 +1,10 @@
 import { Exercise } from "./exercise"; // TODO: root relative paths
 
 export class Workout {
+    id: Number;
     type: WorkoutType;
     date: Date;
-    exercises: Array<Exercise>;
+    exercises: Exercise[];
 }
 
 export enum WorkoutType {
