@@ -1,6 +1,11 @@
 <div *ngIf="workout">
   
-  <h2>{{ workout.type }}</h2>
+  <mat-form-field>
+    <mat-select [(value)]="workout.type">
+      <mat-option value="Upper">Upper</mat-option>
+      <mat-option value="Lower">Lower</mat-option>
+    </mat-select>
+  </mat-form-field>
 
   <label>Date:
     <input [ngModel]="workout.date | date:'yyy-MM-dd'" (ngModelChange)="workout.date = $event" type="date" name="workout.date">

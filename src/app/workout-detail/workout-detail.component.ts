@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
-import { Workout } from '../workout';
+import { Workout, WorkoutType } from '../workout';
 import { ActivatedRoute } from '@angular/router';
 import { WorkoutService } from '../workout.service';
 import { Location } from '@angular/common';
