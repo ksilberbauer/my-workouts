@@ -1,0 +1,8 @@
+<h3>Latest Workouts</h3>
+<div>
+  <a *ngFor="let workout of workouts" routerLink="/detail/{{ workout.id }}">
+    <div>
+      <h4>{{ workout.type }} {{ workout.date | date:'shortDate' }}</h4>
+    </div>
+  </a>
+</div>

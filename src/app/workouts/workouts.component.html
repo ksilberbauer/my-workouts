@@ -1,20 +1,18 @@
 <div>
     <ul>
-        <li *ngFor="let workout of workouts"
-            (click)="onSelect(workout)"
-            [class.selected]="workout === selectedWorkout">
-            <h2>{{ workout.type }}</h2>
-            <div>
-                <label>Date:
-                    <input
-                        [ngModel]="workout.date | date:'yyy-MM-dd'"
-                        (ngModelChange)="workout.date = $event"
-                        type="date"
-                        name="workout.date">
-                </label>
-            </div>
+        <li *ngFor="let workout of workouts">
+            <a routerLink="/detail/{{ workout.id }}">
+                <h2>{{ workout.type }}</h2>
+                <div>
+                    <label>Date:
+                        <input
+                            [ngModel]="workout.date | date:'yyy-MM-dd'"
+                            (ngModelChange)="workout.date = $event"
+                            type="date"
+                            name="workout.date">
+                    </label>
+                </div>
+            </a>
         </li>
     </ul>
 </div>
-
-<app-workout-detail [workout]="selectedWorkout"></app-workout-detail>

@@ -16,7 +16,7 @@ const workout1: Workout = {
 const workout2: Workout = {
     id: 2,
     type: WorkoutType.Lower,
-    date: new Date(2018, 1, 25),
+    date: new Date(2018, 1, 26),
     exercises: [
         { id: 4, name: `back squat`, weight: 225, sets: 4, reps: 6, primaryMuscle: Muscle.Quads, weightType: WeightType.Barbell },
         { id: 5, name: `front squat`, weight: 135, sets: 4, reps: 6, primaryMuscle: Muscle.Quads, weightType: WeightType.Barbell },

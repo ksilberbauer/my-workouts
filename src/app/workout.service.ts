@@ -13,4 +13,7 @@ export class WorkoutService {
     return of(WORKOUTS);
   }
 
+  getWorkout(id: number): Observable<Workout> {
+    return of(WORKOUTS.find(workout => workout.id === id));
+  }
 }

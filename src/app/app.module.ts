@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { WorkoutsComponent } from './workouts/workouts.component';
 import { WorkoutDetailComponent } from './workout-detail/workout-detail.component';
 import { WorkoutService } from './workout.service';
+import { AppRoutingModule } from './/app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -14,10 +16,12 @@ import { WorkoutService } from './workout.service';
     AppComponent,
     WorkoutsComponent,
     WorkoutDetailComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    AppRoutingModule,
   ],
   providers: [
     WorkoutService,
