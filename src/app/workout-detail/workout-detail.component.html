@@ -1,5 +1,13 @@
 <div *ngIf="workout">
-  <h2>Exercises</h2>
+  
+  <h2>{{ workout.type }}</h2>
+
+  <label>Date:
+    <input [ngModel]="workout.date | date:'yyy-MM-dd'" (ngModelChange)="workout.date = $event" type="date" name="workout.date">
+  </label>
+
+  <h3>Exercises</h3>
+  
   <ul>
     <li *ngFor="let exercise of workout.exercises">
       <b>{{ exercise.name }}</b>
@@ -14,6 +22,7 @@
       </label>
     </li>
   </ul>
+  
 </div>
 
 <button (click)="goBack()">go back</button>

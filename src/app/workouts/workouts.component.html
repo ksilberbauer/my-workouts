@@ -19,16 +19,7 @@
         <li *ngFor="let workout of workouts">
             
             <a routerLink="/detail/{{ workout.id }}">
-                <h2>{{ workout.type }}</h2>
-                <div>
-                    <label>Date:
-                        <input
-                            [ngModel]="workout.date | date:'yyy-MM-dd'"
-                            (ngModelChange)="workout.date = $event"
-                            type="date"
-                            name="workout.date">
-                    </label>
-                </div>
+                <span>{{ workout.type }} {{ workout.date | date:'shortDate' }}</span>
             </a>
 
             <button title="delete workout" (click)="delete(workout)">x</button>
