@@ -49,4 +49,23 @@ export class WorkoutService {
         catchError(this.handleError<any>(`updateWorkout`)),
       );
   }
+
+  addWorkout(workout: Workout): Observable<Workout> {
+    return this.http.post<Workout>(this.workoutsUrl, workout, httpOptions)
+      .pipe(
+        tap((workout: Workout) => console.log(`added workout w/ id=${workout.id}`)),
+        catchError(this.handleError<Workout>(`addWorkout`))
+      )
+  }
+
+  deleteWorkout(workout: Workout | number): Observable<Workout> {
+    const id = typeof workout === 'number' ? workout : workout.id;
+    const url = `${this.workoutsUrl}/${id}`;
+
+    return this.http.delete<Workout>(url, httpOptions)
+      .pipe(
+        tap(_ => console.log(`deleted workout id=${id}`)),
+        catchError(this.handleError<Workout>(`deleteWorkout`)),
+      );
+  }
 }

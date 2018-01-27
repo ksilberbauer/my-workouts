@@ -1,6 +1,23 @@
 <div>
+    <label>Workout type:
+        <input #workoutType />
+    </label>
+    <label>Workout date:
+        <input #workoutDate type="date" />
+    </label>
+    <label>Bodyweight:
+        <input #workoutBodyweight />
+    </label>
+
+    <button (click)="add(workoutType.value, workoutDate.value, workoutBodyweight.value); workoutType.value=''">
+        add
+    </button>
+</div>
+
+<div>
     <ul>
         <li *ngFor="let workout of workouts">
+            
             <a routerLink="/detail/{{ workout.id }}">
                 <h2>{{ workout.type }}</h2>
                 <div>
@@ -13,6 +30,9 @@
                     </label>
                 </div>
             </a>
+
+            <button title="delete workout" (click)="delete(workout)">x</button>
+
         </li>
     </ul>
 </div>

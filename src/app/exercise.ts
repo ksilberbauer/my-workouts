@@ -1,11 +1,11 @@
 export class Exercise {
-    id: Number;
+    id: number;
     name: string;
     primaryMuscle: Muscle;
     secondayMuscles?: Muscle[];
-    weight: Number;
-    sets: Number;
-    reps: Number;
+    weight: number;
+    sets: number;
+    reps: number;
     weightType: WeightType;
 }
 

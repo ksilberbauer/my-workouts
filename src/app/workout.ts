@@ -1,11 +1,11 @@
 import { Exercise } from "./exercise"; // TODO: root relative paths
 
 export class Workout {
-    id: Number;
+    id: number;
     type: WorkoutType;
     date: Date;
     exercises: Exercise[];
-    bodyweight: Number; // my bodyweight at time of workout
+    bodyweight: number; // my bodyweight at time of workout
 }
 
 export enum WorkoutType {

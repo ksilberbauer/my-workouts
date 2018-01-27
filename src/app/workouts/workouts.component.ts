@@ -22,4 +22,20 @@ export class WorkoutsComponent implements OnInit {
       .subscribe(workouts => this.workouts = workouts);
   }
 
+  add(type: WorkoutType, date: Date, bodyweight: number): void {
+    if (!type || !date || !bodyweight) { return; }
+    this.workoutService.addWorkout({
+      type,
+      date,
+      exercises: [],
+      bodyweight,
+    } as Workout)
+      .subscribe(workout => { this.workouts.push(workout) });
+  }
+
+  delete(workout: Workout): void {
+    this.workouts = this.workouts.filter(w => w !== workout);
+    this.workoutService.deleteWorkout(workout).subscribe();
+  }
+
 }
