@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Workout, WorkoutType } from '../workout';
-import { WORKOUTS } from '../mock-workouts';
 import { WorkoutService } from '../workout.service';
 
 @Component({

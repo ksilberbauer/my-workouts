@@ -1,3 +1,4 @@
+import { InMemoryDbService } from "angular-in-memory-web-api";
 import { Workout, WorkoutType } from "./workout";
 import { Muscle, Exercise, WeightType } from "./exercise";
 
@@ -25,7 +26,12 @@ const workout2: Workout = {
     bodyweight: 180.0,
 }
 
-export const WORKOUTS: Workout[] = [
-    workout1,
-    workout2,
-]; 
+export class InMemoryDataService implements InMemoryDbService {
+    createDb() {
+        const workouts = [
+            workout1,
+            workout2,
+        ];
+        return { workouts };
+    }
+}

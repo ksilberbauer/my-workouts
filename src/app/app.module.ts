@@ -9,6 +9,9 @@ import { WorkoutDetailComponent } from './workout-detail/workout-detail.componen
 import { WorkoutService } from './workout.service';
 import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HttpClientModule } from "@angular/common/http";
+import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
+import { InMemoryDataService } from "./in-memory-data.service";
 
 
 @NgModule({
@@ -22,6 +25,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false },
+    ),
   ],
   providers: [
     WorkoutService,
