@@ -16,12 +16,5 @@
         </li>
     </ul>
 </div>
-<div *ngIf="selectedWorkout">
-    <h2>Exercises</h2>
-    <ul>
-        <li *ngFor="let exercise of selectedWorkout.exercises">
-            <b>{{ exercise.name }}</b>
-            <span>{{ exercise.sets }}x{{ exercise.reps }} @ {{ exercise.weight }}lb</span>
-        </li>
-    </ul>
-</div>
+
+<app-workout-detail [workout]="selectedWorkout"></app-workout-detail>

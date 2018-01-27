@@ -1,0 +1,17 @@
+<div *ngIf="workout">
+  <h2>Exercises</h2>
+  <ul>
+    <li *ngFor="let exercise of workout.exercises">
+      <b>{{ exercise.name }}</b>
+      <label>sets:
+        <input [(ngModel)]="exercise.sets" placeholder="sets">
+      </label>
+      <label>reps:
+        <input [(ngModel)]="exercise.reps" placeholder="reps">
+      </label>
+      <label>weight:
+        <input [(ngModel)]="exercise.weight" placeholder="weight">
+      </label>
+    </li>
+  </ul>
+</div>
