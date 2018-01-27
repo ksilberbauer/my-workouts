@@ -6,6 +6,7 @@ import { FormsModule } from "@angular/forms";
 import { AppComponent } from './app.component';
 import { WorkoutsComponent } from './workouts/workouts.component';
 import { WorkoutDetailComponent } from './workout-detail/workout-detail.component';
+import { WorkoutService } from './workout.service';
 
 
 @NgModule({
@@ -18,7 +19,9 @@ import { WorkoutDetailComponent } from './workout-detail/workout-detail.componen
     BrowserModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [
+    WorkoutService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
