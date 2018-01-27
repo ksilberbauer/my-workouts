@@ -5,6 +5,7 @@ export class Workout {
     type: WorkoutType;
     date: Date;
     exercises: Exercise[];
+    bodyweight: Number; // my bodyweight at time of workout
 }
 
 export enum WorkoutType {
